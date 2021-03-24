@@ -7,6 +7,8 @@ import { Parser, ParseResult, TreeNode } from "./parser";
 import { Table } from "./table";
 
 const program = new Command();
+
+/* eslint-disable @typescript-eslint/no-var-requires */
 const meta = require("../package.json");
 
 program
@@ -35,7 +37,7 @@ function printSizeTree(root: string, options: commander.OptionValues) {
 
         const appendToBody = function (
             node: TreeNode<ParseResult>,
-            depth: number = 0
+            depth = 0
         ): void {
             if (maxDepth > 0 && depth > maxDepth) {
                 return;
