@@ -1,7 +1,7 @@
 # prsize
 
 ![npm](https://img.shields.io/npm/v/prsize)
-![GitHub branch checks state](https://img.shields.io/github/checks-status/yiliansource/prsize/main)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/yiliansource/prsize/tests/main)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/prsize)
 ![npm](https://img.shields.io/npm/dt/prsize)
 ![supports](https://img.shields.io/badge/supports-.js%2C%20.ts-green)
