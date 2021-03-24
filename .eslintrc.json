@@ -4,6 +4,10 @@
         "node": true,
         "commonjs": true
     },
+    "rules": {
+        "no-inner-declarations": "off",
+        "@typescript-eslint/no-var-requires": "off"
+    },
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint"],
     "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"]
