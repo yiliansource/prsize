@@ -1,10 +1,13 @@
 {
     "name": "prsize",
     "author": "Ian Hornik",
-    "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "version": "1.0.0",
     "description": "A CLI tool to measure JS/TS project sizes.",
+    "main": "./dist/index.js",
+    "bin": {
+        "prsize": "./dist/index.js"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/YilianSource/prsize"
@@ -13,10 +16,10 @@
         "dist/**/*"
     ],
     "scripts": {
-        "start": "node dist/index.js",
+        "start": "ts-node ./src/index.ts",
         "build": "tsc",
-        "ts": "ts-node src/index.ts",
-        "test": "mocha -r ts-node/register 'tests/**/*.ts'"
+        "test": "mocha -r ts-node/register 'tests/**/*.ts'",
+        "local": "npm i -g && prsize"
     },
     "license": "MIT",
     "keywords": [
@@ -26,8 +29,8 @@
         "code"
     ],
     "dependencies": {
+        "commander": "^7.2.0",
         "glob": "^7.1.6",
-        "minimist": "^1.2.5",
         "pretty-bytes": "^5.6.0"
     },
     "devDependencies": {

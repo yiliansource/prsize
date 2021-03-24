@@ -55,30 +55,33 @@ export class Parser {
         const tokens = content.match(info.tokenizer);
 
         let comments = 0;
-        let state: ParserState = ParserState.normal;
-        for (const token of tokens) {
-            switch (state) {
-                case ParserState.normal:
-                    if (token === info.lineCommentToken) {
-                        state = ParserState.lineComment;
-                    } else if (token === info.multiCommentStartToken) {
-                        state = ParserState.multiLineComment;
-                    }
-                    break;
-                case ParserState.lineComment:
-                    if (token === eol) {
-                        state = ParserState.normal;
-                        comments++;
-                    }
-                    break;
-                case ParserState.multiLineComment:
-                    if (token === eol) {
-                        comments++;
-                    } else if (token === info.multiCommentEndToken) {
-                        state = ParserState.normal;
-                        comments++;
-                    }
-                    break;
+
+        if (tokens && tokens.length > 0) {
+            let state: ParserState = ParserState.normal;
+            for (const token of tokens) {
+                switch (state) {
+                    case ParserState.normal:
+                        if (token === info.lineCommentToken) {
+                            state = ParserState.lineComment;
+                        } else if (token === info.multiCommentStartToken) {
+                            state = ParserState.multiLineComment;
+                        }
+                        break;
+                    case ParserState.lineComment:
+                        if (token === eol) {
+                            state = ParserState.normal;
+                            comments++;
+                        }
+                        break;
+                    case ParserState.multiLineComment:
+                        if (token === eol) {
+                            comments++;
+                        } else if (token === info.multiCommentEndToken) {
+                            state = ParserState.normal;
+                            comments++;
+                        }
+                        break;
+                }
             }
         }
 

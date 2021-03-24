@@ -25,6 +25,15 @@ npm i -g prsize
 prsize
 ```
 
+The output will look something like this:
+
+```
+Hierarchy              Size (in bytes)      Executable lines       Comment lines        Total lines
+----------------------------------------------------------------------------------------------------------------------
+<path to the item>     <filesize> [<%>]    <linecount> [<%>]      <linecount> [<%>]    <linecount> [<%>]
+...                    ...                 ...                    ...                  ...
+```
+
 ## Usage
 
 The default usage is to call the tool the following way:
