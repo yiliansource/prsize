@@ -247,7 +247,7 @@ export class Parser {
     ): LanguageParseInformation | undefined {
         const lookup: [string[], LanguageParseInformation][] = [
             [
-                ["js", "ts"],
+                ["js", "ts", "cs"],
                 {
                     tokenizer: /(\/\*)|(\*\/)|(\/{2})|(\w+)|(\s)|(.*?)/g,
                     lineCommentToken: "//",
